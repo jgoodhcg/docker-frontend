@@ -4,7 +4,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    context: "/app/app",
+    context: "/app/src",
     devtool: debug ? "inline-sourcemap" : null,
     entry: "./js/client.js",
     watchOptions: {
@@ -28,6 +28,7 @@ module.exports = {
         filename: "client.min.js"
     },
     plugins: debug ? [new HtmlWebpackPlugin()] : [
+        new HtmlWebpackPlugin(),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
