@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-    context: path.join(__dirname, "src"),
+    context: "/app/app",
     devtool: debug ? "inline-sourcemap" : null,
     entry: "./js/client.js",
     watchOptions: {
@@ -20,15 +20,10 @@ module.exports = {
                     presets: ['react', 'es2015', 'stage-0'],
                     plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
                 }
-            },
-            {
-                test: /\.scss$/,
-                loaders: ['style', 'css', 'sass']
-            }
-        ]
+            }]
     },
     output: {
-        path: __dirname ,
+        path: "/wwwroot",
         filename: "client.min.js"
     },
     plugins: debug ? [] : [

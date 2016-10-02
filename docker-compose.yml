@@ -17,10 +17,11 @@ services:
     image: my-webpack
     container_name: my-webpack-container
     ports:
-      - "35729:35729"
+      - "35729:35729" ## for live reload
     volumes:
       - .:/app
       - /app/node_modules
       - wwwroot:/wwwroot
-  volumes:
-    wwwroot:
+volumes:
+  wwwroot:
+    driver: local
