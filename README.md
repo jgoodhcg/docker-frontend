@@ -6,3 +6,5 @@ todo
  - [ ] figure out why webpack container has `/app/app`
  - [ ] remove `node_modules/` from host?
  - [ ] set up seperate user so container writes don't change ownership of host files?
+ - [ ] productione exportable container
+ - [ ] reconcile production exportable container with debug tools

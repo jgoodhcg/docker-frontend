@@ -1,6 +1,7 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: "/app/app",
@@ -26,7 +27,7 @@ module.exports = {
         path: "/wwwroot",
         filename: "client.min.js"
     },
-    plugins: debug ? [] : [
+    plugins: debug ? [new HtmlWebpackPlugin()] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
